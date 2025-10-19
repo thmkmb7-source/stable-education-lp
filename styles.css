@@ -1,0 +1,101 @@
+/* Base */
+:root{
+  --bg:#0b1020;
+  --card:#111935;
+  --ink:#e8ecff;
+  --muted:#b8c0e0;
+  --brand:#6aa6ff;
+  --accent:#9ff2d6;
+  --ring:0 0 0 3px rgba(106,166,255,.35);
+  --radius:16px;
+  --shadow:0 10px 25px rgba(0,20,80,.25);
+  --font:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic UI","Yu Gothic","Helvetica Neue",Arial,sans-serif;
+}
+@media(prefers-color-scheme:light){
+  :root{ --bg:#f5f7ff; --card:#fff; --ink:#0b1020; --muted:#475077; --shadow:0 10px 25px rgba(0,20,80,.12); }
+}
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{ margin:0; font-family:var(--font); color:var(--ink); background:
+  radial-gradient(1200px 600px at 20% -10%, rgba(106,166,255,.25), transparent 60%),
+  radial-gradient(900px 500px at 110% 10%, rgba(159,242,214,.25), transparent 60%),
+  linear-gradient(180deg, transparent, rgba(255,255,255,.02) 30%),
+  var(--bg);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.7;
+}
+img{ max-width:100%; display:block }
+
+/* Layout */
+.container{ width:min(1120px, 92%); margin-inline:auto }
+.section{ padding:72px 0 }
+.section.alt{ background: linear-gradient(180deg, rgba(255,255,255,.04), transparent) }
+.section-title{ font-size:clamp(22px, 3.4vw, 32px); margin:0 0 18px }
+.grid{ display:grid; gap:18px }
+.grid.two{ grid-template-columns:1fr 1fr }
+.grid.three{ grid-template-columns:repeat(3, 1fr) }
+@media (max-width:900px){
+  .grid.two, .grid.three{ grid-template-columns:1fr }
+}
+
+/* Header */
+.site-header{ position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+  background:rgba(12,18,38,.6); border-bottom:1px solid rgba(255,255,255,.06) }
+.site-header .container{ display:flex; align-items:center; gap:12px; padding:12px 0 }
+.logo{ font-weight:800; letter-spacing:.02em; text-decoration:none; color:var(--ink) }
+.nav{ margin-left:auto; display:flex; gap:18px; align-items:center }
+.nav a{ color:var(--ink); text-decoration:none; font-weight:600 }
+.menu{ display:none; margin-left:auto; background:none; border:none; font-size:22px; color:var(--ink) }
+@media (max-width:860px){
+  .nav{ display:none }
+  .menu{ display:block }
+}
+
+/* Hero */
+.hero{ padding:72px 0; position:relative; overflow:hidden }
+.hero-inner{ display:grid; grid-template-columns:1.05fr .95fr; gap:24px; align-items:center }
+@media (max-width:900px){ .hero-inner{ grid-template-columns:1fr } }
+.badge{ display:inline-block; font-weight:800; font-size:12px; letter-spacing:.08em;
+  padding:6px 10px; border-radius:999px; background:linear-gradient(90deg, var(--accent), var(--brand)); color:#062b2b }
+.hero h1{ font-size:clamp(28px, 5vw, 42px); line-height:1.2; margin:10px 0 8px }
+.lead{ color:var(--muted) }
+.cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top:12px }
+
+.hero-art{ height:320px; position:relative; border-radius:24px; background:var(--card);
+  border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow) }
+.glow{ position:absolute; inset:-20%; background:
+  radial-gradient(400px 200px at 30% 20%, rgba(106,166,255,.18), transparent 60%),
+  radial-gradient(340px 160px at 70% 70%, rgba(159,242,214,.2), transparent 60%) }
+
+/* Cards */
+.card{ background:linear-gradient(180deg, rgba(255,255,255,.04), transparent), var(--card);
+  border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:18px; box-shadow:var(--shadow) }
+.card.focus{ outline:3px solid rgba(106,166,255,.25) }
+
+/* Quote */
+.quote p{ margin:0 0 8px }
+.quote cite{ color:var(--muted) }
+
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px;
+  border-radius:12px; text-decoration:none; font-weight:800; letter-spacing:.02em; border:1px solid transparent; transition:.15s }
+.btn-primary{ background:linear-gradient(90deg, var(--brand), #4f86ff); color:#fff; box-shadow:0 10px 20px rgba(79,134,255,.35) }
+.btn-ghost{ background:transparent; color:var(--ink); border-color:rgba(255,255,255,.18) }
+.btn-lg{ padding:14px 18px; border-radius:14px; font-size:1.02rem }
+.btn:hover{ transform:translateY(-1px) }
+.btn:active{ transform:translateY(0); filter:saturate(.96) }
+.w-100{ width:100% }
+
+/* Lists */
+.list{ margin:10px 0 0; padding-left:1.2em }
+.list li{ margin:.4em 0 }
+
+/* FAQ */
+.faq{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:12px; margin:10px 0 }
+.faq summary{ cursor:pointer; font-weight:700 }
+.faq[open]{ outline:3px solid rgba(106,166,255,.2) }
+
+/* Footer */
+.site-footer{ text-align:center; padding:56px 0 72px; border-top:1px solid rgba(255,255,255,.08) }
+.footer-cta{ font-size:clamp(22px, 3.4vw, 32px); margin:0 0 6px }
+.note{ color:var(--muted) }
