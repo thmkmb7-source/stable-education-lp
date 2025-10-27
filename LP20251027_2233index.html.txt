@@ -1,0 +1,733 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Stable Education｜大学受験の現状と指導方法</title>
+
+  <meta name="description" content="Stable Educationが提供する、地に足をつけた進路選択を実現する大学受験指導法。本当にやりたいことを見つけ、着実に目標を達成します。">
+
+
+
+  <style>
+
+    :root{
+
+      --bg:#0b1020;
+
+      --card:#111935;
+
+      --ink:#e8ecff;
+
+      --muted:#b8c0e0;
+
+      --brand:#6aa6ff;
+
+      --brand-ink:#0b1020;
+
+      --accent:#9ff2d6;
+
+      --error:#ff6b7a;
+
+      --ring: 0 0 0 3px rgba(106,166,255,.35);
+
+      --radius:16px;
+
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+
+      --font:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+
+    }
+
+    @media (prefers-color-scheme: light){
+
+      :root{
+
+        --bg:#f5f7ff; --card:#ffffff; --ink:#0b1020; --muted:#475077;
+
+        --shadow: 0 10px 25px rgba(0,20,80,.12);
+
+      }
+
+    }
+
+    *{box-sizing:border-box}
+
+    html,body{height:100%}
+
+    body{
+
+      margin:0;
+
+      font-family:var(--font);
+
+      background:
+
+        radial-gradient(1200px 600px at 20% -10%, rgba(106,166,255,.25), transparent 60%),
+
+        radial-gradient(900px 500px at 110% 10%, rgba(159,242,214,.25), transparent 60%),
+
+        linear-gradient(180deg, transparent, rgba(255,255,255,.02) 30%),
+
+        var(--bg);
+
+      color:var(--ink);
+
+      -webkit-font-smoothing:antialiased;
+
+      line-height:1.65;
+
+    }
+
+    .wrap{
+
+      max-width:960px; margin-inline:auto; padding:64px 20px 96px;
+
+    }
+
+    header{
+
+      text-align:center; margin-bottom:28px;
+
+    }
+
+    .badge{
+
+      display:inline-block; font-weight:700; letter-spacing:.1em; font-size:12px;
+
+      background:linear-gradient(90deg, var(--accent), var(--brand));
+
+      color:var(--brand-ink); border-radius:999px; padding:6px 10px; box-shadow:var(--shadow);
+
+    }
+
+    h1{
+
+      margin:14px 0 0; font-size:clamp(28px, 6vw, 40px); line-height:1.2; letter-spacing:.02em;
+
+    }
+
+    p.lead{
+
+      margin:10px auto 0; max-width:680px; color:var(--muted); font-size:clamp(14px, 2.5vw, 16px);
+
+    }
+
+    .grid{
+
+      display:grid; gap:22px;
+
+      grid-template-columns: 1.1fr .9fr;
+
+    }
+
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+
+      background:linear-gradient(180deg, rgba(255,255,255,.04), transparent),
+
+                 radial-gradient(800px 240px at 20% -20%, rgba(106,166,255,.08), transparent 60%),
+
+                 var(--card);
+
+      border:1px solid rgba(255,255,255,.06);
+
+      border-radius:var(--radius);
+
+      box-shadow:var(--shadow);
+
+      padding:22px;
+
+    }
+
+    .note{
+
+      color:var(--muted); font-size:.9rem; margin-top:4px;
+
+    }
+
+    .side .callout{
+
+      background:
+
+        radial-gradient(600px 180px at 10% -20%, rgba(159,242,214,.18), transparent 60%),
+
+        var(--card);
+
+      border:1px solid rgba(255,255,255,.06);
+
+      border-radius:var(--radius);
+
+      box-shadow:var(--shadow);
+
+      padding:18px 18px;
+
+    }
+
+    footer{ margin-top:28px; text-align:center; color:var(--muted); font-size:.9rem }
+
+    footer a{ color:var(--accent) }
+
+
+
+    /* Custom CSS for Index Page */
+
+    .nav-links{ display:flex; justify-content:center; gap:16px; margin-top:32px; flex-wrap:wrap; }
+
+    .nav-links a{
+
+        color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem;
+
+        padding:8px 14px; border-radius:12px; transition:background .2s;
+
+        border:1px solid rgba(255,255,255,.08);
+
+        white-space: nowrap; /* Prevent wrapping for link text */
+
+    }
+
+    .nav-links a:hover{ background:rgba(255,255,255,.05); }
+
+    @media (prefers-color-scheme: light){
+
+        .nav-links a{ border-color:#dfe6ff; }
+
+        .nav-links a:hover{ background:#f7f9ff; }
+
+    }
+
+
+
+    .feature-grid{ display:grid; gap:22px; grid-template-columns: repeat(3, 1fr); margin-top:32px; }
+
+    @media (max-width:900px){ .feature-grid{grid-template-columns:1fr} }
+
+    .feature-grid .item{ background:var(--card); padding:20px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.06); }
+
+    .feature-grid .item h3{ margin:0 0 10px; font-size:1.2rem; color:var(--brand); }
+
+    .feature-grid .item p{ margin:0; font-size:.95rem; color:var(--muted); }
+
+
+
+    .cta-box{
+
+        text-align:center; padding:30px; border-radius:var(--radius);
+
+        background:linear-gradient(135deg, rgba(106,166,255,.15), rgba(159,242,214,.15));
+
+        margin-top:40px;
+
+    }
+
+    .cta-box h2{ font-size:1.8rem; margin:0 0 16px; }
+
+    .cta-box .btn{
+
+        display:inline-block; font-weight:800; letter-spacing:.03em; text-decoration:none;
+
+        padding:14px 28px; border-radius:14px; transition: transform .08s ease, box-shadow .2s;
+
+        background:linear-gradient(90deg, var(--brand), #4f86ff);
+
+        color:#fff; box-shadow: 0 10px 20px rgba(79,134,255,.35);
+
+    }
+
+    .cta-box .btn:hover{ transform: translateY(-1px) }
+
+    .cta-box .btn:active{ transform: translateY(0) scale(.98) }
+
+
+
+    .comparison-section{ margin-top:50px; }
+
+    .comparison-section h2{ font-size:1.8rem; margin-bottom:24px; text-align:center; }
+
+    .comparison-list{ display:grid; gap:20px; }
+
+    .comparison-item{
+
+        padding:20px; border-radius:var(--radius);
+
+        border:1px solid rgba(255,255,255,.1);
+
+        background:var(--card);
+
+    }
+
+    .comparison-item h3{ margin:0 0 8px; font-size:1.1rem; color:var(--accent); }
+
+
+
+    .guidance-method{ margin-top:40px; }
+
+    .guidance-method h2{ font-size:1.8rem; margin-bottom:24px; text-align:center; }
+
+    .guidance-method ol{ list-style:none; padding:0; margin:0; display:grid; gap:20px; }
+
+    .guidance-method li{
+
+        display:flex; gap:15px; align-items:flex-start;
+
+        padding:20px; border-radius:var(--radius);
+
+        border:1px solid rgba(255,255,255,.06);
+
+        background:linear-gradient(180deg, rgba(255,255,255,.02), transparent), var(--card);
+
+    }
+
+    .guidance-method .num{
+
+        flex-shrink:0; font-size:32px; font-weight:900;
+
+        color:var(--brand); line-height:1;
+
+        margin-top:-3px;
+
+    }
+
+    .guidance-method li h4{ margin:0 0 6px; font-size:1.2rem; }
+
+    .guidance-method li p{ margin:0; color:var(--muted); }
+
+
+
+    .pmp-section{ margin-top:50px; }
+
+    .pmp-section h2{ font-size:1.8rem; margin-bottom:24px; text-align:center; }
+
+    .pmp-grid{
+
+        display:grid; gap:22px; grid-template-columns: repeat(3, 1fr); margin-top:30px;
+
+    }
+
+    @media (max-width:900px){ .pmp-grid{grid-template-columns:1fr} }
+
+    .pmp-item{
+
+        padding:20px; border-radius:var(--radius);
+
+        background:linear-gradient(180deg, rgba(255,255,255,.04), transparent), var(--card);
+
+        border:1px solid rgba(255,255,255,.06);
+
+    }
+
+    .pmp-item h3{ font-size:1.2rem; margin:0 0 10px; color:var(--accent); }
+
+    .pmp-item p{ margin:0; font-size:.95rem; color:var(--muted); }
+
+
+
+    .price-box{
+
+        margin-top:40px; text-align:center;
+
+        padding:30px; border-radius:var(--radius);
+
+        border:2px dashed var(--brand);
+
+    }
+
+    .price-box h2{ font-size:1.8rem; margin:0 0 20px; }
+
+    .price-box table{
+
+        width:100%; border-collapse:collapse; margin-top:20px; text-align:left;
+
+        font-size:1.1rem;
+
+    }
+
+    .price-box th, .price-box td{ padding:12px; }
+
+    .price-box th{
+
+        font-weight:600; background:rgba(106,166,255,.1);
+
+    }
+
+    .price-box td{ text-align:right; font-weight:700; color:var(--accent); }
+
+    .price-box tr:nth-child(even) { background:rgba(255,255,255,.02); } /* Adjusted for visual separation */
+
+    .price-box .duration{ color:var(--muted); font-size:.9rem; display:block; text-align:right; margin-top:10px; }
+
+
+
+    .footer-closing{
+
+        margin-top:60px; text-align:center; max-width:700px; margin-inline:auto;
+
+    }
+
+    .footer-closing h2{ font-size:1.5rem; color:var(--brand); margin-bottom:20px; }
+
+    .footer-closing p{ color:var(--muted); margin-bottom:10px; }
+
+    .footer-links{ margin-top:30px; }
+
+    .footer-links a{ margin:0 8px; color:var(--muted); text-decoration:none; font-size:.9rem; }
+
+    .footer-links a:hover{ color:var(--accent); }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <header>
+
+      <span class="badge">Stable Education</span>
+
+      <h1>Stable Education</h1>
+
+      <p class="lead">地に足をつけた進路選択を</p>
+
+      <nav class="nav-links">
+
+        <a href="#about">Stable Educationについて</a>
+
+        <a href="#status">大学受験の現状</a>
+
+        <a href="#feature">塾の特徴</a>
+
+        <a href="#method">圧倒的に自信のある指導方法</a>
+
+        <a href="#price">料金</a>
+
+      </nav>
+
+    </header>
+
+
+
+    <section class="cta-box" id="feature">
+
+      <h2>本当にやりたいことを明確にした上で大学を選ぶ</h2>
+
+      <p style="color:var(--muted); margin-bottom:24px;">
+
+        本当に大事なことは「意外と少ない」<br>
+
+        本当に大事な情報は1人1人違う
+
+      </p>
+
+      <div style="margin-bottom:24px; color:var(--ink); font-weight:600;">
+
+        早慶・MARCHの志望理由書作成・面接対策も今なら無料
+
+      </div>
+
+      <a href="contact.html" class="btn">無料相談はこちらから</a>
+
+    </section>
+
+
+
+    <section class="comparison-section" id="status">
+
+      <h2>大学受験の現状について</h2>
+
+
+
+      <div class="comparison-list">
+
+        <div class="comparison-item">
+
+          <h3 style="color:var(--error);">よくある例(1)</h3>
+
+          <p>大学入学後、自分の入学した大学・学部に後悔する人の割合は31.4% [cite: 17, 31]</p>
+
+          <p class="note">本当は英語が好きで、国際学部に行きたかったが、とりあえず合格した際に合格した社会学部に自分に言い聞かせつつ進学。大学学部に進学 [cite: 18]</p>
+
+        </div>
+
+        <div class="comparison-item">
+
+          <h3 style="color:var(--error);">よくある例(2)</h3>
+
+          <p>学部名より大学名 [cite: 20]</p>
+
+          <p class="note">念願の早稲田大学に行きたくて、複数学部を受験して受かった学部に進学 [cite: 22]。と社会学部ですることが違う [cite: 23]</p>
+
+        </div>
+
+        <div class="comparison-item">
+
+          <h3 style="color:var(--error);">よくある例(3)</h3>
+
+          <p>そもそも大学で何をやりたいかはっきりさせていない [cite: 21]</p>
+
+          <p class="note">入学後に大学への期待が薄れていく [cite: 24]。の学部の勉強が、自分のやりたかったことか、進学後に考えるのでは遅い。 [cite: 25] やりたいこと探しのために大学進学は一理あるが、とりあえず社会に出る前のモラトリアム期間として、の勉強をするかく [cite: 26]</p>
+
+        </div>
+
+      </div>
+
+
+
+      <div style="margin-top:30px; padding:20px; border-radius:var(--radius); background:rgba(106,166,255,.05);">
+
+        <p style="font-weight:700; margin-bottom:8px;">大学は、自分の目指す未来に向けての準備を行う場所。 [cite: 27]</p>
+
+        <p style="margin:0;">楽しいに決まっているし、楽しくなくてはならない。 [cite: 28] そのために、入学前に大学をどう使うか自分の中で決めていくべき [cite: 29]。らいは入学にはっきりと決めておくべき [cite: 30]</p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="feature-grid">
+
+      <div class="item">
+
+        <h3>本当にやりたいことを明確にした上で大学を選ぶ</h3>
+
+        <p>現状と過去の自分から、本質的に何のために大学に行くのか。大学卒業後にどうなっていたいのかを深掘り、本質的に大学進学の目的意識を明確にしていきます。 [cite: 32, 33, 34, 35, 36]</p>
+
+      </div>
+
+      <div class="item">
+
+        <h3>本当に大事なことは「意外に少ない」</h3>
+
+        <p>受験で差が付くのは、結局は基礎の理解度の部分。 [cite: 39] あれこれと手を拡げすぎず、基礎を理解し、定着するというプロセスを大事にします。 [cite: 40]</p>
+
+      </div>
+
+      <div class="item">
+
+        <h3>本当に大事な情報は1人1人違う</h3>
+
+        <p>受験は情報戦。 [cite: 43] しかし受験生一人ひとりにとって、本当に大事な情報は違う。 [cite: 44, 45] 大学・生徒様の双方を熟知した担任が必要な情報を随時お届けし、万全のバックアップ体制を整えていきます。 [cite: 46, 47, 48]</p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="comparison-section">
+
+      <h2>成績を上げるにはどうすればいい?</h2>
+
+      <div class="comparison-list">
+
+        <div class="comparison-item">
+
+          <h3 style="color:var(--brand);">とりあえず集団塾</h3>
+
+          <p>苦手科目があるからと言ってとりあえず集団塾に通っても、多く の場合は学校の授業の2回目を聴くだけ。塾の先生の方が分かりやすいとは限らないし、似たような授業を聞いて授業のクオリテ を求めるようになり発想が他 になるようであれば逆効果 [cite: 52, 54, 55, 56]</p>
+
+        </div>
+
+        <div class="comparison-item">
+
+          <h3 style="color:var(--brand);">個別指導塾</h3>
+
+          <p>個別指導塾は面倒見を売りにして電話はくれるけど、実態は学生バイトの場当たり対応授業と営業目的の面談が続くばかりで、本 的に悩みに向き合ってくれるかは担当者次第 [cite: 58, 59]</p>
+
+        </div>
+
+        <div class="comparison-item">
+
+          <h3 style="color:var(--brand);">受験が不安で進学塾</h3>
+
+          <p>進学塾は学校の授業に余裕が出てきて通うには良いが、学校の授 すらおぼつかないなら消化不良になる。焦る気持ちは分かるが まず学校から。 [cite: 66, 67, 68]</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="guidance-method" id="method">
+
+      <h2>圧倒的に自信のある指導方法</h2>
+
+      <ol>
+
+        <li>
+
+          <div class="num">1</div>
+
+          <div>
+
+            <h4>徹底した個別管理指導</h4>
+
+            <p>毎週90分の授業と、週1回の中間報告、及び逆授業を通じて、真の理解と地に足を付けた学習サポートを実現。 [cite: 69, 70]</p>
+
+          </div>
+
+        </li>
+
+        <li>
+
+          <div class="num">2</div>
+
+          <div>
+
+            <h4>講師との24時間チャット</h4>
+
+            <p>講師、運営担任、生徒、保護者のライングループを作成し、担任の方からこまめに学習の進捗確認、学習や生活のアドバイスを行っていきます。また生徒様、保護者様からお受けした質問事項には24時間以内に担当講師及び運営担任が対応致します。 [cite: 72, 73, 75, 76]</p>
+
+          </div>
+
+        </li>
+
+        <li>
+
+          <div class="num">3</div>
+
+          <div>
+
+            <h4>圧倒的な情報量に基づいた進路支援</h4>
+
+            <p>生徒様一人一人によって、現状も、目指す未来も変わってきます。だからこそ個別指導の中で得られたニーズにお応えし、必要な情報を次の指導報告とともにお届けします。 [cite: 79, 80, 82]</p>
+
+          </div>
+
+        </li>
+
+      </ol>
+
+    </section>
+
+
+
+    <section class="pmp-section">
+
+      <div class="pmp-grid">
+
+        <div class="pmp-item">
+
+          <h3>Philosophy</h3>
+
+          <p>学校の勉強が第一。学校で足りるなら塾は要りません。そもそも勉強は自分でやるものです。悩む前にやる。先を見るよりもまず足元を固めて欲しいと願っています。 [cite: 86]</p>
+
+        </div>
+
+        <div class="pmp-item">
+
+          <h3>Mission</h3>
+
+          <p>授業及び週の途中の中間報告を経て、単に勉強を教えるだけでなく、1週間の時間の使い方や、目標に向けて今何をしなければならないのかを明確にしてれ いきます。 [cite: 87]</p>
+
+        </div>
+
+        <div class="pmp-item">
+
+          <h3>Policy</h3>
+
+          <p>医大生を中心に各科目のエキスパートを厳選して採用。特に医学部対策には、医学部入試面接に満点で合格した医大生のみを厳選して採用し、医学部合格に当たってのメンタル面、生活面も徹底してサポートします。 [cite: 88]</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="price-box" id="price">
+
+      <h2>料金</h2>
+
+      <table>
+
+        <tr>
+
+          <th>週1回指導</th>
+
+          <td>27,500円(税込み)</td>
+
+        </tr>
+
+        <tr>
+
+          <th>面接特訓</th>
+
+          <td>9,900円(税込み)</td>
+
+        </tr>
+
+      </table>
+
+      <span class="duration">60分 [cite: 94]</span>
+
+    </section>
+
+
+
+    <div class="footer-closing">
+
+      <h2>遠いところに行きたかったら、まず足元から [cite: 95, 96]</h2>
+
+      <p>大学進学は、自分の目指す未来に向けて準備を行うための機会を得る行為です。 [cite: 97]</p>
+
+      <p>まず自分を知ること。自分の目指す人生を知ること。 [cite: 98]</p>
+
+      <p>自分の未来は今の自分の延長線上にあります。 [cite: 99]</p>
+
+      <p>未来の自分を作るのは、今あなたが取り組んでいる課題です。 [cite: 100]</p>
+
+      <p>遠くへ行きたいからこそ、今を大切にしてほしい。足元を見てほしい。 [cite: 101]</p>
+
+      <p>そうして、自分の納得する未来を描き、またその未来を可能にするだけの実力を付けてほしい。 [cite: 102]</p>
+
+      <p>安定した土台のもとに未来を描き、着実にその未来に近付いてほしい。 [cite: 103]</p>
+
+      <p style="font-weight:700; color:var(--ink); margin-top:20px;">Stable Educationの目指すもの、それは生徒様お一人一人の夢の実現にあります。 [cite: 104]</p>
+
+
+
+      <div class="footer-links">
+
+        <a href="#">プライバシーポリシー</a>
+
+        <a href="#">特商法に基づく表記</a>
+
+        <a href="contact.html">お問合せ</a>
+
+      </div>
+
+    </div>
+
+
+
+    <footer>
+
+      © <span id="y"></span> Stable Education, All rights reserved.
+
+    </footer>
+
+  </div>
+
+
+
+  <script>
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+
+</html>
